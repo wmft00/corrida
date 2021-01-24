@@ -9,7 +9,7 @@ jQuery.validar.isEmpty = function(val) {
     }
 };
 // End jQuery.validar.isEmpty
-
+ 
 jQuery.validar.isCPF = function(arg) {
     if (arg === '000.000.000-00' || 
         arg === '111.111.111-11' || 
@@ -161,13 +161,31 @@ jQuery.validar.isDataAtual = function(str){
 
 jQuery.validar.isNascimento = function(str, anoAtual, idadeMaxima){
     if(jQuery.validar.isData(str)){
-        var arr = str.split("/");
-        var idade = parseInt(anoAtual) - parseInt(arr[2]);
-        
-        if(idade <= idadeMaxima && idade > 10)
-            return true;
-        else
+        var dataAtual = new Date();
+        var anoAtual = dataAtual.getFullYear();
+        var anoNascParts = str.split('/');
+        var diaNasc = anoNascParts[0];
+        var mesNasc = anoNascParts[1];
+        var anoNasc = anoNascParts[2];
+        var idade = anoAtual - anoNasc;
+        var mesAtual = dataAtual.getMonth() + 1; 
+        //Se mes atual for menor que o nascimento, nao fez aniversario ainda;  
+        if(mesAtual < mesNasc){
+            idade--; 
+        } else {
+        //Se estiver no mes do nascimento, verificar o dia
+            if(mesAtual == mesNasc){ 
+                if(new Date().getDate() < diaNasc ){ 
+                    //Se a data atual for menor que o dia de nascimento ele ainda nao fez aniversario
+                    idade--; 
+                }
+            }
+        } 
+        if (idade < 18){
             return false;
+        } else {
+            return true;
+        }
     }
     return false;
 };
@@ -319,7 +337,7 @@ jQuery.fn.validar.me = function(o) {
                             }
                         }else if (req === "nascimento") {
                             if (!jQuery.validar.isNascimento(val, jQuery.fn.validar.options.anoAtual, jQuery.fn.validar.options.idadeMaxima)) {
-                                throw "Por favor, preencha corretamente o campo " + label + ".";
+                                throw "O corredor deve ter mais que 18 anos. Verifique a data de nascimento!";
                             }
                         }else if (req === "senha") {
                             if (!jQuery.validar.isSenha(val)) {
@@ -340,7 +358,7 @@ jQuery.fn.validar.me = function(o) {
                         }else if (opc === "nascimento"){
                             if(val !== ""){
                                 if (!jQuery.validar.isNascimento(val)) {
-                                    throw "Por favor, preencha corretamente o campo " + label + ".";
+                                    throw "O corredor deve ter mais que 18 anos. Verifique a data de nascimento!";
                                 }
                             }
                         }else if (opc === "senha"){

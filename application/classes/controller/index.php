@@ -22,7 +22,6 @@ class Controller_Index extends Controller_Template {
 
         $this->template->conteudo = $view;
     }
-
     public static function ddmmaaaa_aaaammdd($dd_mm_aaaa) {
         $axdia = substr($dd_mm_aaaa, 0, 2);
         $axmes = substr($dd_mm_aaaa, 3, 2);
@@ -30,7 +29,6 @@ class Controller_Index extends Controller_Template {
         $aaaa_mm_dd = $axano . "-" . $axmes . "-" . $axdia;
         return $aaaa_mm_dd;
     }
-
     public static function aaaammdd_ddmmaaaa($aaaa_mm_dd) {
         $axdia = substr($aaaa_mm_dd, 8, 2);
         $axmes = substr($aaaa_mm_dd, 5, 2);
@@ -38,8 +36,6 @@ class Controller_Index extends Controller_Template {
         $dd_mm_aaaa = $axdia . "/" . $axmes . "/" . $axano;
         return $dd_mm_aaaa;
     }
-
-    
 }
 
 // End Template

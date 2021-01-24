@@ -42,16 +42,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="<?php echo url::base(); ?>plugins/select2/select2.full.min.js"></script>
         <!-- AdminLTE App -->
         <script src="<?php echo url::base() ?>dist/js/app.min.js"></script>
-        <!-- iCheck -->
-        <script src="<?php echo url::base() ?>plugins/iCheck/icheck.min.js"></script>
-        <!-- ChartJS 1.0.1 -->
-        <script src="<?php echo url::base() ?>plugins/chartjs/Chart.min.js"></script>
-        <!--MASCARAS-->
-        <script src="<?php echo url::base(); ?>js/maskedmoney-1.3.min.js" type="text/javascript"></script>
+       <!--MASCARAS-->
         <script src="<?php echo url::base(); ?>js/maskedinput-1.4.min.js" type="text/javascript"></script>
-        <!--FANCYBOX-->
-        <script src="<?php echo url::base(); ?>js/fancybox-1.3.1.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="<?php echo url::base(); ?>css/fancybox-1.3.1.min.css" type="text/css" media="" />
         <!-- bootstrap datepicker -->
         <link rel="stylesheet" href="<?php echo url::base(); ?>plugins/datepicker/datepicker3.css">
         <script src="<?php echo url::base(); ?>plugins/datepicker/bootstrap-datepicker.js"></script>

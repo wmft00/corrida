@@ -319,7 +319,7 @@
                                     }
                                 } else { ?>
                                 <tr style="background-color:#BDBDBD;">
-                                    <td colspan="4">Acima de 55 anos</td>
+                                    <td colspan="4">Nenhum competidor acima de 55 anos</td>
                                 </tr>
                                 <?php } ?>
    

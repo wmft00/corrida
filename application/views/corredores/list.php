@@ -36,7 +36,7 @@
                     <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="text" validar="data"  class="form-control data pequeno" placeholder="Data Nascimento" value="" id="COR_DATA_NASCIMENTO" name="COR_DATA_NASCIMENTO">
+                    <input type="text" validar="nascimento"  class="form-control data pequeno" placeholder="Data Nascimento" value="" id="COR_DATA_NASCIMENTO" name="COR_DATA_NASCIMENTO">
                 </div>
             </div>
                     </div>

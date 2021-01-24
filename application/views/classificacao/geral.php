@@ -47,15 +47,22 @@
                                 <th>ID Prova <?php echo $pro->PRO_ID; ?></th>
                                 <th colspan="3">Tipo <?php echo $pro->PRO_TIPO; ?> Km - <?php echo Controller_Index::aaaammdd_ddmmaaaa($pro->PRO_DATA); ?></th>
                             </tr>
+                            <?php if (count($resultados) > 0){ ?>
                             <tr style="background-color:#AAE6F7;">
                                 <th>ID Corredor</th>
                                 <th>Idade</th>
                                 <th>Nome</th>
                                 <th>Posição</th>
                             </tr>
+                            <?php } else { ?>
+                                <tr style="background-color:#AAE6F7;">
+                                <th colspan="4">Nenhum resultado</th>
+                            </tr>
+                            <?php } ?>
+                            
                         </thead>
                         <tbody>
-                        <?php if (count($resultados) > 0){
+                        <?php 
                             $pos = 1;
                             usort($colocacao, 'sortTime'); 
                             foreach ($colocacao as $col){ ?>
@@ -68,7 +75,7 @@
                         <?php 
                             $pos++;
                             } 
-                        }?> 
+                        ?>
                         </tbody>
                     </table>
                     <hr>
